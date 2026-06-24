@@ -158,3 +158,7 @@ do
   })
 end
 
+do
+	require("config.lazy")
+end
+
