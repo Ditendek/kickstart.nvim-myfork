@@ -156,6 +156,10 @@ do
     group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
     callback = function() vim.hl.on_yank() end,
   })
+
+	---@param repo string
+	---@return string
+	local function gh(repo) return 'https://github.com/' .. repo end
 end
 
 do
