@@ -1,0 +1,29 @@
+TODO COmments
+  ---@type (string|vim.pack.Spec)[]
+  local telescope_plugins = {
+    gh 'nvim-lua/plenary.nvim',
+    gh 'nvim-telescope/telescope.nvim',
+    gh 'nvim-telescope/telescope-ui-select.nvim',
+  }
+  if vim.fn.executable 'make' == 1 then table.insert(telescope_plugins, gh 'nvim-telescope/telescope-fzf-native.nvim') end
+'neovim/nvim-lspconfig',
+'mason-org/mason.nvim',
+'mason-org/mason-lspconfig.nvim',
+'WhoIsSethDaniel/mason-tool-installer.nvim',
+stevearc/conform.nvim
+nvim-treesitter/nvim-treesitter
+
+nice to have?:
+NMAC427/guess-indent.nvim
+nvim-tree/nvim-web-devicons
+lewis6991/gitsigns.nvim
+folke/which-key.nvim
+j-hui/fidget.nvim // for LSP status updates
+L3MON4D3/LuaSnip
+saghen/blink.cmp
+
+not sure yet:
+nvim-mini/mini.nvim
+  mini.ai
+  mini.surround
+  mini.statusline
