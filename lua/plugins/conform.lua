@@ -1,14 +1,16 @@
 return {
-    'stevearc/conform.nvim',
-    event = { 'BufWritePre' },
-    cmd = { 'ConformInfo' },
+    "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    cmd = { "ConformInfo" },
     keys = {
         {
             -- Customize or remove this keymap to your liking
-            '<leader>f',
-            function() require('conform').format { async = true } end,
-            mode = '',
-            desc = 'Format buffer',
+            "<leader>f",
+            function()
+                require("conform").format({ async = true })
+            end,
+            mode = "",
+            desc = "Format buffer",
         },
     },
     -- This will provide type hinting with LuaLS
@@ -17,56 +19,56 @@ return {
     opts = {
         -- Define your formatters
         formatters_by_ft = {
-            lua = { 'stylua' },
-            python = { 'isort', 'black' },
-            javascript = { 'prettierd', 'prettier', stop_after_first = true },
-            c = { 'clang-format' },
-            cpp = { 'clang-format' },
+            lua = { "stylua" },
+            python = { "isort", "black" },
+            javascript = { "prettierd", "prettier", stop_after_first = true },
+            c = { "clang-format" },
+            cpp = { "clang-format" },
         },
         -- Set default options
         default_format_opts = {
-            lsp_format = 'fallback',
+            lsp_format = "fallback",
         },
         -- Set up format-on-save
         format_on_save = { timeout_ms = 500 },
         -- Customize formatters
         formatters = {
             shfmt = {
-                append_args = { '-i', '2' },
+                append_args = { "-i", "2" },
             },
             stylua = {
                 prepend_args = {
-                    '--indent-type',
-                    'Spaces',
-                    '--indent-width',
-                    '4',
+                    "--indent-type",
+                    "Spaces",
+                    "--indent-width",
+                    "4",
                 },
             },
 
             black = {
                 prepend_args = {
-                    '--line-length',
-                    '88',
+                    "--line-length",
+                    "88",
                 },
             },
 
             prettier = {
                 prepend_args = {
-                    '--tab-width',
-                    '4',
+                    "--tab-width",
+                    "4",
                 },
             },
 
             prettierd = {
                 prepend_args = {
-                    '--tab-width',
-                    '4',
+                    "--tab-width",
+                    "4",
                 },
             },
 
-            ['clang-format'] = {
+            ["clang-format"] = {
                 prepend_args = {
-                    '--style={BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never, AllowShortFunctionsOnASingleLine: None}',
+                    "--style={BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never, AllowShortFunctionsOnASingleLine: None}",
                 },
             },
         },
