@@ -23,6 +23,7 @@ return {
             python = { "isort", "black" },
             javascript = { "prettierd", "prettier", stop_after_first = true },
             c = { "clang-format" },
+            cpp = { "clang-format" },
         },
         -- Set default options
         default_format_opts = {
@@ -34,6 +35,41 @@ return {
         formatters = {
             shfmt = {
                 append_args = { "-i", "2" },
+            },
+            stylua = {
+                prepend_args = {
+                    "--indent-type",
+                    "Spaces",
+                    "--indent-width",
+                    "4",
+                },
+            },
+
+            black = {
+                prepend_args = {
+                    "--line-length",
+                    "88",
+                },
+            },
+
+            prettier = {
+                prepend_args = {
+                    "--tab-width",
+                    "4",
+                },
+            },
+
+            prettierd = {
+                prepend_args = {
+                    "--tab-width",
+                    "4",
+                },
+            },
+
+            ["clang-format"] = {
+                prepend_args = {
+                    "--style={BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never, AllowShortFunctionsOnASingleLine: None}",
+                },
             },
         },
     },
